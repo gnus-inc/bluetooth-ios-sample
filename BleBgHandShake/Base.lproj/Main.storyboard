@@ -1,24 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="BleBgHandShake" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UdV-uO-n2D">
+                                <rect key="frame" x="307" y="78" width="87" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="7Ru-Sz-GFU"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="OFF"/>
+                                    <segment title="ON"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="didValueChangedAdvertisement:" destination="BYZ-38-t0r" eventType="valueChanged" id="Gj8-Ni-bev"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vdJ-M1-umK">
+                                <rect key="frame" x="307" y="117" width="87" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="azS-OI-8aU"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="OFF"/>
+                                    <segment title="ON"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="didValueChangedScan:" destination="BYZ-38-t0r" eventType="valueChanged" id="c5q-GU-bcf"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advertisement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVN-UA-8nL">
+                                <rect key="frame" x="20" y="83" width="287" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qro-Ef-swf">
+                                <rect key="frame" x="20" y="122" width="287" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qro-Ef-swf" firstAttribute="top" secondItem="jVN-UA-8nL" secondAttribute="bottom" constant="18" id="DD7-q7-KOZ"/>
+                            <constraint firstItem="jVN-UA-8nL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="HZl-gV-ITD"/>
+                            <constraint firstItem="jVN-UA-8nL" firstAttribute="leading" secondItem="Qro-Ef-swf" secondAttribute="leading" id="K61-c3-yfe"/>
+                            <constraint firstItem="jVN-UA-8nL" firstAttribute="trailing" secondItem="Qro-Ef-swf" secondAttribute="trailing" id="M4O-c1-4pL"/>
+                            <constraint firstItem="UdV-uO-n2D" firstAttribute="leading" secondItem="vdJ-M1-umK" secondAttribute="leading" id="Sj7-Rw-0pR"/>
+                            <constraint firstItem="vdJ-M1-umK" firstAttribute="leading" secondItem="Qro-Ef-swf" secondAttribute="trailing" id="Vjl-D1-FGl"/>
+                            <constraint firstItem="vdJ-M1-umK" firstAttribute="top" secondItem="UdV-uO-n2D" secondAttribute="bottom" constant="8" id="aF0-Tb-4sa"/>
+                            <constraint firstItem="jVN-UA-8nL" firstAttribute="centerY" secondItem="UdV-uO-n2D" secondAttribute="centerY" id="dVQ-4i-drP"/>
+                            <constraint firstItem="UdV-uO-n2D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="jky-6m-sYD"/>
+                            <constraint firstItem="UdV-uO-n2D" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="oQi-m3-AEf"/>
+                            <constraint firstItem="Qro-Ef-swf" firstAttribute="baseline" secondItem="vdJ-M1-umK" secondAttribute="firstBaseline" id="svg-Jn-QE2"/>
+                            <constraint firstItem="jVN-UA-8nL" firstAttribute="baseline" secondItem="UdV-uO-n2D" secondAttribute="firstBaseline" id="zd8-zb-G5q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="advertisementSegmentedControl" destination="UdV-uO-n2D" id="oQb-2n-fQO"/>
+                        <outlet property="scanSegmentedControl" destination="vdJ-M1-umK" id="iRO-xb-cE4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
     </scenes>
 </document>
