@@ -77,13 +77,14 @@ class BlePeripheralManager: NSObject {
     }
 
     private func setup() {
-        self.service = CBMutableService(type: CBUUID(string: "1199"),
+        self.service = CBMutableService(type: CBUUID.myService,
                                         primary: true)
-        self.characteristic = CBMutableCharacteristic(type: CBUUID(string: "8822"),
+        self.characteristic = CBMutableCharacteristic(type: CBUUID.myCharacteristic,
                                                       properties: [.read],
                                                       value: Data(from: 0xF0F0),
                                                       permissions: [.readable])
         self.service!.characteristics = [self.characteristic!]
+        self.peripheralManager.removeAllServices()
         self.peripheralManager.add(self.service!)
     }
 
@@ -117,6 +118,8 @@ extension BlePeripheralManager: CBPeripheralManagerDelegate {
 
     func peripheralManager(_ peripheral: CBPeripheralManager, willRestoreState dict: [String : Any]) {
         print("willRestoreState: \(dict)")
+        self.delegates.forEach{$0.didChangedAdvertismentState(started: self.isAdvertiseing)}
+
     }
 
     func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {

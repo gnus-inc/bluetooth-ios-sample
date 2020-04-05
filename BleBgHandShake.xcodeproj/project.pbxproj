@@ -16,6 +16,7 @@
 		0800A3892438C4D20099F4E7 /* BlePeripheralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0800A3882438C4D20099F4E7 /* BlePeripheralManager.swift */; };
 		0800A38B2438C9560099F4E7 /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0800A38A2438C9560099F4E7 /* Data+.swift */; };
 		0800A38D243936E00099F4E7 /* BleCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0800A38C243936E00099F4E7 /* BleCentralManager.swift */; };
+		0800A38F243A1FB50099F4E7 /* CBUUID+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0800A38E243A1FB50099F4E7 /* CBUUID+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0800A3882438C4D20099F4E7 /* BlePeripheralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlePeripheralManager.swift; sourceTree = "<group>"; };
 		0800A38A2438C9560099F4E7 /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
 		0800A38C243936E00099F4E7 /* BleCentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleCentralManager.swift; sourceTree = "<group>"; };
+		0800A38E243A1FB50099F4E7 /* CBUUID+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CBUUID+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				0800A3782438C2C10099F4E7 /* MainViewController.swift */,
 				0800A3882438C4D20099F4E7 /* BlePeripheralManager.swift */,
 				0800A38C243936E00099F4E7 /* BleCentralManager.swift */,
+				0800A38E243A1FB50099F4E7 /* CBUUID+.swift */,
 				0800A38A2438C9560099F4E7 /* Data+.swift */,
 				0800A37F2438C2C30099F4E7 /* LaunchScreen.storyboard */,
 				0800A37A2438C2C10099F4E7 /* Main.storyboard */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0800A38F243A1FB50099F4E7 /* CBUUID+.swift in Sources */,
 				0800A3792438C2C10099F4E7 /* MainViewController.swift in Sources */,
 				0800A3752438C2C10099F4E7 /* AppDelegate.swift in Sources */,
 				0800A38B2438C9560099F4E7 /* Data+.swift in Sources */,

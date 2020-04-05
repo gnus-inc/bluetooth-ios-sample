@@ -20,6 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        print(" <<<<< applicationDidEnterBackground >>>>> ")
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        print(" <<<<< applicationWillEnterForeground >>>>> ")
+    }
+
     // MARK: UISceneSession Lifecycle
 
     @available(iOS 13.0, *)
